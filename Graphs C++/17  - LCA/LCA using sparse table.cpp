@@ -34,6 +34,12 @@ int LCA(int u, int v) {
 			u = Par[u][j];
 		}
 	}
+
+	// if v is ancestor of u
+	if (u == v) {
+		return u;
+	}
+
 	// u and v are on the same level
 	for (int j = M - 1; j >= 0; j--) {
 		if (Par[u][j] != Par[v][j]) {
